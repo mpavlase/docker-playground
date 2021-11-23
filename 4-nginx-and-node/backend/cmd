@@ -1,0 +1,12 @@
+docker network create mydockernetwork
+docker run -p 80:3000 --network mydockernetwork -ti 4-playground
+
+resp.:
+docker network connect mydockernetwork <container-name>
+docker run -p 80:3000 --network mydockernetwork -ti 4-playground
+
+
+
+
+Finally:
+docker run --name backend --network mydockernetwork 4-playground-be

@@ -1,0 +1,2 @@
+docker build -t 4-playground-ng .
+docker run -p 80:80 --network mydockernetwork 4-playground-ng

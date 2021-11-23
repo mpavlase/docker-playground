@@ -1,0 +1,1 @@
+docker run -v "$(cygpath -wa .):/watch" fm-2

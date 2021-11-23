@@ -3,16 +3,27 @@ version: '3'
 services:
 
   backend:
+    build: ./backend
+    networks:
+      - mydockernetwork
     # služba backend se buildí z ./backend
     # je na síti mydockernetwork
     # ...
 
   nginx:
+    #image: "nginx:alpine"
     # služba nginx se buildí z ./nginx
+    build: ./nginx
     # je na síti mydockernetwork
+    networks:
+      - mydockernetwork
     # má namapovaný port 80 na 80
+    ports:
+      - "80:80"
     # ...
 
 networks:
+  mydockernetwork:
+    driver: bridge
   # vytvořit bridge mydockernetwork:
   # ...
